@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { isUserLoggedIn } from "../helper/auth";
 import UserContext from "../context/UserContext";
 import { useContext } from "react";
@@ -8,8 +8,10 @@ import { DoorBackOutlined, FileCopySharp, Home, Login, Logout, NewReleases, Peop
 
 function Navbar() {
   const userContext=useContext(UserContext);
+  const redirect=useNavigate();
   const logoutHandaler=()=>{
     userContext.logout();
+    redirect("/")
     toast.success("User Logout!!")
   }
   return (

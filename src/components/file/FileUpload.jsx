@@ -143,13 +143,13 @@ const FileUpload = () => {
   
   const redirect=useNavigate();
   useEffect(() => {
-    if (isUserLoggedIn){
+    if (!isUserLoggedIn){
       redirect("/login")
     }
     
   },[redirect]);
   return ( <>
-  {!isUserLoggedIn && (
+  {isUserLoggedIn && (
     <FileUploadHandler/>
   )}
   </>

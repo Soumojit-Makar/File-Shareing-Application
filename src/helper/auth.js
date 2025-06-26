@@ -37,3 +37,7 @@ export const getAddress = () => {
 export const getAbout = () => {
     return getUserData().user.about;
 }
+export const getRefrest=()=>{
+    // console.log(getUserInfo())
+    return getUserData().refreshToken.refreshTokenHold
+}

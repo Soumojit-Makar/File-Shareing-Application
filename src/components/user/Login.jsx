@@ -24,7 +24,7 @@ const Login = () => {
     setLoading(true);
     loginUser(formData)
     .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         userContext.login(response.data);
         toast.success("Login successful");
         redirect("/profile");
